@@ -45,6 +45,11 @@ namespace NbaLeagueRomania.service
             return players;
         }
 
+        public IEnumerable<Player> GetAllPlayers()
+        {
+            return repository.GetAll();
+        }
+
         public Player GetOne(long id)
         {
             return repository.GetOne(id);

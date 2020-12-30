@@ -23,7 +23,7 @@ namespace NbaLeagueRomania.controller
 
         public void AddTeam(string name)
         {
-           throw new Exception("There already is a team with this ID!");
+            teamService.AddTeam(new Team(name));
             
         }
         public void DeleteTeam(long id)
@@ -36,9 +36,12 @@ namespace NbaLeagueRomania.controller
             return teamService.GetAllTeams();
         }
 
-        public void AddNewPlayer(string nume, string scoala, Team echipa)
+        public void AddNewPlayer(string nume, string scoala, long teamID)
         {
-            playerService.AddPlayer(new Player(nume, scoala, echipa));
+            Team team = teamService.GetOne(teamID);
+            if (team == null)
+                throw new Exception("The team doesn't exist!");
+            playerService.AddPlayer(new Player(nume, scoala,team));
         }
 
         public void DeletePlayer(long id)
@@ -46,6 +49,10 @@ namespace NbaLeagueRomania.controller
             playerService.DeletePlayer(id);
         }
 
+        public IEnumerable<Player> GetAllPlayers()
+        {
+            return playerService.GetAllPlayers();
+        }
         public List<Player> GetPlayersOfTeam(long teamID)
         {
             Team wantedTeam = teamService.GetOne(teamID);
