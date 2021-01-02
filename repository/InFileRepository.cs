@@ -24,7 +24,12 @@ namespace NbaLeagueRomania.repository
         protected virtual void loadFromFile()
         {
             List<E> list = DataReader.ReadData(filename, createEntity);
-            list.ForEach(x => entities[x.ID] = x);
+            list.ForEach(x =>
+            {
+                validator.validate(x);
+                entities[x.ID] = x;
+            });
+
         }
         protected virtual void writeToFile(E entity)
         {

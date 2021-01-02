@@ -42,8 +42,10 @@ namespace NbaLeagueRomania.repository
 
         public override Player Save(Player entity)
         {
+            Player toSave = base.Save(entity);
             writeToFile(entity);
-            return base.Save(entity);
+            return toSave;
+           
         }
     }
 }

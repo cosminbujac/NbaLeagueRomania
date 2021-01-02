@@ -1,2 +1,25 @@
-﻿0|Jon Hotomanul|Hagiwards|1
-1|Mirciut Harnicul|Saint Snake|0
+﻿0|Jon|Scoala Gimnaziala Octavian Goga|0
+1|Clone of Jon|Scoala Gimnaziala Octavian Goga|0
+2|Darth Jonathan|Scoala Gimnaziala Octavian Goga|0
+3|Johnny|Scoala Gimnaziala Octavian Goga|0
+4|Jon...DIO|Scoala Gimnaziala Octavian Goga|0
+5|Bruce|Liceul de Informatica Tiberiu Popoviciu|1
+6|Clark|Liceul de Informatica Tiberiu Popoviciu|1
+7|Diana|Liceul de Informatica Tiberiu Popoviciu|1
+8|Barry|Liceul de Informatica Tiberiu Popoviciu|1
+9|Oliver|Liceul de Informatica Tiberiu Popoviciu|1
+10|Tony|Scoala Gimnaziala Ioan Bob|2
+11|Banner|Scoala Gimnaziala Ioan Bob|2
+12|Natasha|Scoala Gimnaziala Ioan Bob|2
+13|Thor|Scoala Gimnaziala Ioan Bob|2
+14|Clint|Scoala Gimnaziala Ioan Bob|2
+15|Mingus|Colegiul National Pedagogic Gheorghe Lazar|3
+16|Herbie|Colegiul National Pedagogic Gheorghe Lazar|3
+17|Babs Gonzales|Colegiul National Pedagogic Gheorghe Lazar|3
+18|Chet Baker|Colegiul National Pedagogic Gheorghe Lazar|3
+19|Nina Simone|Colegiul National Pedagogic Gheorghe Lazar|3
+20|Cioran|Seminarul Teologic Ortodox|4
+21|Freud|Seminarul Teologic Ortodox|4
+22|Nietzsche|Seminarul Teologic Ortodox|4
+23|Voltaire|Seminarul Teologic Ortodox|4
+24|Dudan|Seminarul Teologic Ortodox|4

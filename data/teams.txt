@@ -1,2 +1,5 @@
-﻿0|matao
-1|tactao
+﻿0|Los Angeles Lakers
+1|New York Knicks
+2|Chicago Bulls
+3|Utah Jazz
+4|Boston Celtics

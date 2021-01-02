@@ -40,7 +40,7 @@ namespace NbaLeagueRomania.controller
         {
             Team team = teamService.GetOne(teamID);
             if (team == null)
-                throw new Exception("The team doesn't exist!");
+                throw new Exception("The team isn't registered!");
             playerService.AddPlayer(new Player(nume, scoala,team));
         }
 
@@ -70,6 +70,8 @@ namespace NbaLeagueRomania.controller
             Team team2 = teamService.GetOne(team2Id);
             if (team2 == null)
                 throw new Exception("There no team with that corresponds to the second ID!");
+            if(team1==team2)
+                throw new Exception("Team cannot play itself!");
             gameService.AddGame(new Game(team1,team2));
         }
 

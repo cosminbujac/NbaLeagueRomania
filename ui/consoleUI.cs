@@ -57,8 +57,10 @@ namespace NbaLeagueRomania.ui
         }
         private void showAllTeams()
         {
+            Console.WriteLine("---------------------");
             foreach(var t in controller.GetAllTeams())
                 Console.WriteLine(t);
+            Console.WriteLine("---------------------");
         }
         private void addPlayer()
         {
@@ -93,8 +95,10 @@ namespace NbaLeagueRomania.ui
 
         private void showAllPlayers()
         {
-            foreach(var p in controller.GetAllPlayers())
+            Console.WriteLine("---------------------");
+            foreach (var p in controller.GetAllPlayers())
                 Console.WriteLine(p);
+            Console.WriteLine("---------------------");
         }
 
         private void addGame()
@@ -114,8 +118,10 @@ namespace NbaLeagueRomania.ui
         }
         private void showAllGames()
         {
-            foreach(var g in controller.GetAllGames())
+            Console.WriteLine("---------------------");
+            foreach (var g in controller.GetAllGames())
                 Console.WriteLine(g);
+            Console.WriteLine("---------------------");
         }
 
         private void addActivePlayer()
@@ -147,8 +153,10 @@ namespace NbaLeagueRomania.ui
         }
         private void showAllActivePlayers()
         {
-            foreach(var p in controller.GetAllActivePlayers())
+            Console.WriteLine("---------------------");
+            foreach (var p in controller.GetAllActivePlayers())
                 Console.WriteLine(p);
+            Console.WriteLine("---------------------");
         }
 
         public void run()
