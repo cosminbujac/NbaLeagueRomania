@@ -2,6 +2,7 @@
 using NbaLeagueRomania.repository;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace NbaLeagueRomania.service
@@ -31,14 +32,13 @@ namespace NbaLeagueRomania.service
             return repository.GetAll();
         }
 
-        public List<ActivePlayer> GetActivePlayersOfGame(long gameID)
+        public IEnumerable<ActivePlayer> GetActivePlayersOfGame(long gameID)
         {
-            List<ActivePlayer> players = new List<ActivePlayer>();
-            foreach (var x in repository.GetAll())
-                if (x.idMeci.Equals(gameID))
-                    players.Add(x);
-            return players;
+            IEnumerable<ActivePlayer> players = from activePlayer in repository.GetAll()
+                                         where activePlayer.idMeci.Equals(gameID)
+                                         select activePlayer;
 
+            return players;
         }
 
 

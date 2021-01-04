@@ -2,6 +2,7 @@
 using NbaLeagueRomania.service;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace NbaLeagueRomania.controller
@@ -53,7 +54,7 @@ namespace NbaLeagueRomania.controller
         {
             return playerService.GetAllPlayers();
         }
-        public List<Player> GetPlayersOfTeam(long teamID)
+        public IEnumerable<Player> GetPlayersOfTeam(long teamID)
         {
             Team wantedTeam = teamService.GetOne(teamID);
             if (wantedTeam != null)
@@ -85,7 +86,7 @@ namespace NbaLeagueRomania.controller
             return gameService.GetAll();
         }
 
-        public List<Player> getPlayersOfTeam(long teamId)
+        public IEnumerable<Player> getPlayersOfTeam(long teamId)
         {
             Team team = teamService.GetOne(teamId);
             if (team == null)
@@ -137,17 +138,20 @@ namespace NbaLeagueRomania.controller
                 throw new Exception("Game doesn't exist!");
             Team team1 = game.FirstTeam;
             int scoreT1=0, scoreT2=0;
+
             foreach (var x in activePlayerService.GetActivePlayersOfGame(gameID))
                 if (playerService.GetOne(x.idJucator).Echipa.Equals(team1))
                     scoreT1+=x.nrPuncteInscrise;
                 else
                     scoreT2+=x.nrPuncteInscrise;
+            
             return game.ToString() + " | score: " + scoreT1 + " : " + scoreT2; 
         }
 
         public List<string> getActivePlayersOfGameAndTeam(long gameID,long teamID)
         {
             Game game = gameService.GetOne(gameID);
+
             if ( game == null)
                 throw new Exception("Game doesn't exist!");
             if (teamService.GetOne(teamID) == null)
@@ -157,7 +161,8 @@ namespace NbaLeagueRomania.controller
 
             List<string> players = new List<string>();
             players.Add("For team " + teamService.GetOne(teamID).Name + " :");
-            activePlayerService.GetActivePlayersOfGame(gameID)
+
+            activePlayerService.GetActivePlayersOfGame(gameID).ToList()
                 .ForEach(x =>
                 {
                     Player player = playerService.GetOne(x.idJucator);

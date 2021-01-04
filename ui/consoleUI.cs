@@ -2,6 +2,7 @@
 using NbaLeagueRomania.entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace NbaLeagueRomania.ui
@@ -186,7 +187,8 @@ namespace NbaLeagueRomania.ui
             try
             {
                 long teamID = long.Parse(Console.ReadLine());
-                controller.getPlayersOfTeam(teamID).ForEach(x => Console.WriteLine(x));
+                controller.getPlayersOfTeam(teamID).ToList().
+                    ForEach(x => Console.WriteLine(x));
             }
             catch(Exception e)
             {
